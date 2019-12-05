@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/bootstrap4/css/bootstrap.css">
+	  <link rel="stylesheet" href="bootstrap4/node_modules/wowjs/css/libs/animate.css">
+	<title>Transport Counter</title>
+	<link rel="stylesheet" type="text/css" href="font/css/all.min.css">
+</head>
+<style type="text/css">
+*{
+	margin:0px;
+	padding:0px;
+	font-family: cursive;
+	
+}
+.box{
+	width: 100%;
+	/*height: 700px;*/
+	background-color: #AFEEEE;
+}
+#menubar{
+background-color: #151719;
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	left:-200px;
+	transition: all 500ms linear;
+}
+#menubar.active{
+	left:0px;
+}
+#menubar ul li{
+	list-style: none;
+	padding:15px 10px;
+	border-bottom:1px solid rgba(100, 100, 100,0.3);
+
+}
+#menubar .toggle-btn{
+	position: absolute;
+	left: 230px;
+	top: 20px;
+
+}
+#menubar .toggle-btn span{
+	display: block;
+	width: 30px;
+	height:5px;
+	background-color: #151719;
+	margin:5px 0px;
+}
+.fab-container{
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	z-index: 999;
+	cursor: pointer;
+}
+.fab-icon-holder{
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color: #016fb9;
+	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.fab-icon-holder:hover{
+	opacity: 0.8;
+}
+.fab-icon-holder i {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-size: 25px;
+	color:white;
+}
+.fab-icon-holder:hover{
+	opacity: 0.8;
+	
+}
+.up{
+	
+	cursor: pointer;
+	color: white;
+	background-color: #151719;
+}
+#car{
+	display: none;
+	width: 100%;
+	color: black;
+}
+#car input{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;  
+}
+
+#truck{
+	display: none;
+	width: 100%;
+}
+#truck input{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;  
+}
+#bikes{
+	display: none;
+	width: 100%;
+}
+#bikes input{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+
+}
+#cycle{
+	display: none;
+	width: 100%;
+}
+#cycle input{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;  
+}
+#buses{
+	display: none;
+	width: 100%;
+}
+#buses input{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;  
+}
+.move{
+    padding-left: 20%;
+    padding-top: 10%; 
+}
+#pas{
+	
+	border: none;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color:#647489;
+	color: white;
+	
+
+}
+#mas{
+	border: none;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color:tomato;
+	color: white;
+}
+.spell{
+	margin-left: 50px;
+}
+#oas{
+	border: none;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color: red;
+	color: white;
+}
+.row{
+	margin-left: -160%;
+	border: none;
+	border-radius: 10%;
+	margin-top: -80%;
+	width: 150%;
+	height: 30px;
+}
+#hyi{
+	padding-top: 10px;
+	font-family: sans-serif;
+	font-size: 20px;
+
+}
+#hy{
+	padding-top: 30px;
+	font-family:sans-serif;
+	font-size: 30px;
+}
+#oos{
+	width: 100px;
+	height: 40px;
+	color: white;
+	background-color:grey;
+	font-size: 15px;
+	font-family: sans-serif;
+	border-radius: 15px;
+	margin-left:30px;
+}
+#sok{
+	width: 150px;
+	height:90px;
+}
+ #pot {
+	padding-bottom: 5px important!;
+}
+#past{
+	font-family: sans-serif;
+	width: 100px;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 20px;
+    text-align: center;
+    margin-left:205px;
+    margin-top:80px
+}
+#sok2{
+	margin-bottom: 400px;
+	margin-right: 400px;
+
+}
+#show7{
+	width: 120px;
+	height: 40px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	border: none;
+}
+#show6{
+	width: 50px;
+	height: 40px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 20px;
+	border: none;
+	margin-left: 17px;
+
+}
+#show{
+	width: 50px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 18px;
+
+}
+#shown{
+	width: 120px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 15px;
+
+}
+#showt{
+	width: 120px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 15px;
+
+}
+#show1{
+	width: 50px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 18px;
+
+}
+#showth{
+	width: 120px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 15px;
+
+}
+#show3{
+	width: 50px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 18px;
+
+}
+#showp{
+	width: 120px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 15px;
+
+}
+#show4{
+	width: 50px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 18px;
+
+}
+#showps{
+	width: 120px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 15px;
+
+}
+#show5{
+	width: 50px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	font-size: 18px;
+}
+#kr{
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	font-synthesis: sans-serif;
+	border-radius: 15px;
+	margin-left:  200px;
+	margin-top: 100px;
+    width: 100px;
+}
+#operator{
+	margin-left: 205px;
+	margin-top: 10px;
+	background-color: blue;
+	border-radius: 8px;
+	color: white;
+	height: 40px;
+	width: 60px;
+	font-size:25px;
+	font-family: sans-serif; 
+
+}
+
+
+	
+</style>
+
+<body>
+ <div class="box">
+
+
+	<div id="menubar">
+
+		<div id="bars" class="toggle-btn" data-target="menu-ul" data-toggle="#menu-ul" onclick="menusidebar()">
+			<p id="pot">menu</p>
+			<span></span>
+			<span></span>
+			<span></span>
+		   
+		</div>
+		
+		<button id="kr" type="reset" onclick="re()"> RESET</i></button>
+		 <input  type="" name="" class="row" value="0" id="past" disabled>	
+        <button value="button" id="operator" onclick="spot()">total</button>
+
+		<ul id="menu-ul" style="background-color: #151719;" onclick="menusidebar()">
+			<li><button onclick="touch('car')" class="up"><i class="fas fa-car"></i> Car</button></li>
+			<li><button onclick="touch('truck')" class="up"><i class="fas fa-motorcycle"></i> Truck</button></li>
+			<li><button onclick="touch('bikes')" class="up"><i class="fas fa-truck"></i> Bike</button></li>
+			<li><button onclick="touch('buses')" class="up"><i class="fas fa-bus"></i> Bus</button></li>
+			<li><button onclick="touch('cycle')" class="up"><i class="fas fa-bicycle"></i> Bicycle</button></li>
+			<li><button onclick="touch('othe')" class="up"><i class="fas fa-bicycle"></i> Others</button></li>
+		</ul>
+			
+
+	</div>
+	<center><div id="hy">
+		<p><h1><strong>VEHICLE COUNTING APPLICATION</strong></h1></p>
+	</div></center>
+	<center><div id="hyi"> </div>
+         <img src="toyota2.png" style="height: 70px;width: 120px;padding-top: 15px;" id="sok">
+         <p><b><h3> click on the menu icon to choose your desire vehicle</h3></b></p>
+         
+	</center>
+    
+<div class="image">
+	<div class="fab-container" >
+
+	<div onclick="calc()">
+   
+     <div>
+      </div>
+     <div>
+     
+     </div>
+       
+
+		</div>
+	</div>
+	
+	
+
+</div>
+<div class="move">
+
+<div id="see"></div>
+
+			<div id="car">
+			
+			<h2 class="btn btn-info"><strong><marquee>CAR</marquee></strong></h2 id=>
+      DES:<input type="text" value="" id="shown" style="text-align: center;" placeholder="optional">
+      <input type="number" value="0" id="show" class="jp" style="text-align: center;" disabled>
+     <br> 
+     <div class="spell">
+  <button id="pas" onclick="add()"><i class="fas fa-plus"></i></button>
+   <button id="mas" onclick="minus()"><i class="fas fa-minus"></i></button>
+  <button id="oas" type="" onclick="cl()"><i class="fas fa-trash"></i></button>
+  <button id="oos" type="" onclick="removeee()">REMOVE</button>
+     </div>
+
+		</div>
+		<br>
+
+		<div id="truck">
+
+			<h2 class="btn btn-info"><strong><marquee>TRUCK</marquee></strong></h2 id=>
+       DES:<input type="text" value="" id="showt" style="text-align: center;" placeholder="optional">
+      <input type="number" value="0" id="show1"  style="text-align: center;" disabled>
+      
+<br>
+     <div class="spell">
+       <button id="pas" onclick="add1()"><i class="fas fa-plus"></i></button> <button value="0" id="mas" onclick="minus1()"><i class="fas fa-minus"></i></button>
+       <button id="oas" type="reset" onclick="cl1()"><i class="fas fa-trash"></i></button>
+       <button id="oos" type="reset" onclick="removee1()">REMOVE</i></button>
+      </div>
+ 		</div>
+
+<br>
+		<div id="bikes">
+
+			<h2 class="btn btn-info"><strong><marquee>BIKE</marquee></strong></h2 id=>
+       DES:<input type="text" value="" id="showth" style="text-align: center;" placeholder="optional">
+      <input type="number" value="0" id="show3"  style="text-align: center;" disabled>
+      
+<br>
+   <div class="spell">
+  <button id="pas" onclick="add2()"><i class="fas fa-plus"></i></button> <button id="mas" onclick="minus2()"><i class="fas fa-minus"></i></button>
+  <button id="oas" type="reset" onclick="cl2()"><i class="fas fa-trash"></i></button>
+  <button id="oos" type="reset" onclick="removee2()">REMOVE </i></button>
+   </div>
+
+		</div>
+<br>
+		<div id="cycle">
+
+			<h2 class="btn btn-info"><strong><marquee>BICYCLE</marquee></strong></h2 id=>
+      DES:<input type="text" value="" id="showp" style="text-align: center;" placeholder="optional">
+      <input type="number" value="0" id="show4"  style="text-align: center;" disabled>
+       
+<br>
+   <div class="spell">
+  <button id="pas" onclick="add3()"><i class="fas fa-plus"></i></button> <button id="mas" onclick="minus3()"><i class="fas fa-minus"></i></button>
+  <button id="oas" type="reset" onclick="cl3()"><i class="fas fa-trash"></i></button>
+  <button id="oos" type="reset" onclick="removee3()"> REMOVE</i></button>
+  </div>
+		</div>
+<br>
+		<div id="buses">
+
+			<h2 class="btn btn-info"><strong><marquee>BUS</marquee></strong></h2 id=>
+      DES:<input type="text" value="" id="showps" style="text-align: center;" placeholder="optional">
+      <input type="number" value="0" id="show5"  style="text-align:center;"disabled>
+
+<br>
+   <div class="spell">
+  <button id="pas" onclick="add4()"><i class="fas fa-plus"></i></button> <button id="mas" onclick="minus4()"><i class="fas fa-minus"></i></button>
+  <button id="oas" type="reset" onclick="cl4()"> <i class="fas fa-trash"></i></button>
+  <button id="oos" type="reset" onclick="removee4()"> REMOVE</i></button>
+  </div>
+
+        </div>
+	
+<br>
+		<div id="othe" style="display:none">
+             <h2 class="btn btn-info"><strong><marquee>others</marquee></strong></h2>
+        NAME:<input type="text" value="" id="show7" style="text-align:center;">
+         <input type="number" value="0" id="show6"  style="text-align:center;"disabled>
+         <br>
+         <div class="spell">
+          <button id="pas" onclick="addd5()"><i class="fas fa-plus"></i></button> <button id="mas" onclick="minuss5()"><i class="fas fa-minus btn btn-success"></i></button>
+          <button id="oas" type="reset" onclick="cll5()"> <i class="fas fa-trash"></i></button>
+          <button id="oos" type="reset" onclick="removeee5()"> REMOVE</i></button>
+			</div>
+			
+		</div>
+
+<br>
+
+
+</body>
+<script type="text/javascript">
+	function menusidebar(){
+		document.getElementById('menubar').classList.toggle('active');
+	}
+
+function touch(vehi) {
+
+	document.getElementById(vehi).style.display="block";
+
+}
+function calc(){
+	var show = parseInt(document.getElementById('show').value);
+	var show1 = parseInt(document.getElementById('show1').value);
+	var show3 = parseInt(document.getElementById('show3').value);
+	var show4 = parseInt(document.getElementById('show4').value);
+	var show5 = parseInt(document.getElementById('show5').value);
+    var show6 = parseInt(document.getElementById('show6').value);
+
+	var tif = document.getElementById('operator').value;
+	console.log(show3);
+
+	if (tif === '+') {
+		  document.getElementsByClassName('row')[0].value= show+show1+show3+show4+show5+show6;
+
+	}
+
+}
+function spot(){
+	past.value = parseInt(show.value)+parseInt(show1.value)+parseInt(show3.value)+parseInt(show4.value)+parseInt(show5.value)+parseInt(show6.value);
+
+}
+
+
+function add(){
+	show.value =parseInt( show.value)+1;
+}
+function minus(){
+	show.value -=1
+}
+
+
+function cl(){
+ show.value=0
+    
+}
+
+function add1(){
+	show1.value =parseInt( show1.value)+1
+}
+function minus1(){
+	show1.value -=1
+}
+
+
+function cl1(){
+ show1.value=0
+    
+}
+function add2(){
+	show3.value =parseInt( show3.value)+1
+}
+function minus2(){
+	show3.value -=1
+}
+
+
+function cl2(){
+ show3.value=0
+    
+}
+function add3(){
+	show4.value =parseInt( show4.value)+1
+}
+function minus3(){
+	show4.value -=1
+}
+
+
+function cl3(){
+ show4.value=0
+    
+}
+function add4(){
+	show5.value =parseInt( show5.value)+1
+}
+function minus4(){
+	show5.value -=1;
+}
+
+
+function cl4(){
+ show5.value=0
+    
+}
+function addd5(){
+	show6.value =parseInt( show6.value)+1
+}
+function minuss5(){
+	show6.value -=1;
+}
+
+
+function cll5(){
+ show6.value=0;
+    
+}
+
+function removeee(){
+ document.getElementById('car').style.display="none";
+    
+}
+function removee1(){
+ document.getElementById('truck').style.display="none";
+    
+}
+function removee2(){
+ document.getElementById('bikes').style.display="none";
+    
+}
+function removee3(){
+ document.getElementById('cycle').style.display="none";
+    
+}
+function removee4(){
+ document.getElementById('buses').style.display="none";
+    
+}
+function removeee5(){
+ document.getElementById('othe').style.display="none";
+    
+}
+function re(){
+	show.value = '0';
+	show1.value = '0';
+	show3.value = '0';
+	show4.value = '0';
+	show5.value = '0';
+	show6.value = '0';
+	past.value = '0';
+
+}
+var modest;
+function showing(){
+   var dab= new Date();
+    dd= ("0" + dab.getDate()).slice(-2);
+    aa=("0" + dab.getMonth() +1).slice(-2);
+    yyyy= dab.getFullYear();
+    xx=("0" + dab.getMinutes()).slice(-2);
+    ss=("0" + dab.getHours()).slice(-2);
+    pp=("0" + dab.getSeconds()).slice(-2);
+     modest = dd + "-" + aa + "-" + yyyy + " " + ss + ":" + xx + ":" + pp;
+    document.getElementById('hyi').innerHTML = modest;
+    setTimeout('showing()',1000);
+    document.getElementById('hy').innerHTML =  "counterApp"
+   
+
+
+}
+showing();
+
+</script>
+
+</html>

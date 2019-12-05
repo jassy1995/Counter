@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.css">
+	  <link rel="stylesheet" href="bootstrap4/node_modules/wowjs/css/libs/animate.css">
+	  <link rel="stylesheet" type="text/css" href="../font/css/all.css">
+	<title>Transport Management System</title>
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.top{
+		
+		margin-left: 40%;
+		margin-top: 20%;	
+	}
+.d{
+	margin-left: 66px;
+}
+	.welcome{
+		background-image:linear-gradient(blue,black);
+		position: relative;
+		height: 100vh;
+		overflow: hidden;
+		font-family: cursive;}
+
+ul li{
+	position: absolute;
+	border: 1px solid white;
+	width: 30px;
+	height: 30px;
+	list-style: none;
+	opacity: 0;
+	background: white;
+}
+.square li{
+	top: 50vh;
+	left: 45vw;
+	animation: square 10s linear infinite
+
+}
+.square li:nth-child(2){
+	top: 80vh;
+	left: 10vw;
+	animation-delay:2s;
+
+}
+.square li:nth-child(3){
+	top: 80vh;
+	left: 85vw;
+	animation-delay:4s;
+
+}
+.square li:nth-child(4){
+	top: 10vh;
+	left: 70vw;
+	animation-delay:6s;
+
+}
+.square li:nth-child(5){
+	top: 10vh;
+	left: 10vw;
+	animation-delay:8s;
+
+}
+@keyframes square{
+	0%{
+		transform: scale(0) rotateY(0deg);
+		opacity: 1;
+	}
+	100%{
+		transform: scale(5) rotateY(1000deg);
+		opacity: 0;
+	}
+}
+.circle li{
+    bottom: 0;
+    left:15vw;
+    animation: circle 10s linear infinite;
+}
+.circle li:nth-child(2){
+    left:35vw;
+    animation-delay:2s;
+
+}
+.circle li:nth-child(3){
+    left:55vw;
+    animation-delay:6s;
+
+}
+.circle li:nth-child(4){
+    left:75vw;
+    animation-delay:4s;
+}
+.circle li:nth-child(5){
+    left:90vw;
+    animation-delay:8s;
+
+}
+@keyframes circle{
+	0%{
+		transform: scale(0) rotate(0deg);
+		opacity: 1;
+		bottom:0;
+		border-radius: 0;
+	}
+	100%{
+		transform: scale(5) rotate(1000deg);
+		opacity: 0;
+		bottom: 90vh;
+		border-radius: 50%;
+	}
+}
+h4{
+ font-family: sans-serif;
+ color: white;
+ margin-left: 7%;
+}
+h5{
+	color: white;
+	
+}
+ .hope{
+ 	margin-top: 30%;
+ 	margin-left: 60%;
+
+ }
+</style>
+
+<body>
+	<div class="welcome">
+		<div class="square">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+
+			</ul>
+		</div>
+
+		<div class="circle">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+
+			</ul>
+		</div>
+		<h4><i class="fas fa-motorcycle"></i> Transport Count System <i class="fas fa-car-alt"></i></h4>
+<div class="d"><h3 class="btn btn-warning"><marquee><strong>Count your Vehicle with ease</strong></marquee></h3></div>
+<a href="count1.html"> <div class="top"><button class="btn btn-info"> <i class="fas fa-car-alt"> Get Started </i> <i class="fas fa-car-alt"></i></button></div></a>
+
+
+	</div>
+	
+
+</body>
+</html>
